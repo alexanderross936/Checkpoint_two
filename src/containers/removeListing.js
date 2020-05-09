@@ -3,9 +3,10 @@ import { removeListing } from '../redux/actions';
 
 
 
+
 const mapDispatchToProps = (dispatch) => {
     return {
-        removeCar: (business) => dispatch(removeListing(business)),
+        removeListing: (business) => dispatch(removeListing(business)),
     }
 }
 

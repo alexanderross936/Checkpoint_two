@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
-import { addBusiness, removeBusiness } from './actions'
+import { addListing, removeListing } from './actions'
 
 const user = (state = null) => state
 
 // add switch statements in here
 const businesses = (state = [], action) => {
     switch(action.type) {
-        case 'ADD_BUSINESS':
+        case 'ADD_LISTING':
             return [ ...state, action.value ]
-        case 'REMOVE_BUSINESS':
+        case 'REMOVE_LISTING':
             const newState = [ ...state ]
             newState.splice(action.value, 1);
             return newState;

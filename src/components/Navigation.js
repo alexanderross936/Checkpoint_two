@@ -12,7 +12,7 @@ const Navigation = () => {
                     <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" style={{ flexGrow: "1" }}>
-                    FakeCars.com
+                    ATX Businesses
                 </Typography>
                 <ul className="nav-list">
                     <li className="nav-list-item">
@@ -20,6 +20,13 @@ const Navigation = () => {
                     </li>
                     <li className="nav-list-item">
                         <Link to="/">Listings</Link>
+                    </li>
+                    <li className="nav-list-item"
+                        onClick={() => {
+                            document.cookie = "loggedIn="
+                            window.location.replace("/login")
+                        }}>
+                        Logout
                     </li>
                 </ul>
             </Toolbar>

@@ -15,25 +15,20 @@ class addListing extends React.Component {
         hours: ''
     }
 
-    toggleDialog = () => this.setState({ open: !this.state.open })
-
 
     handleTextChange = (e) => {
         const newState = { ...this.state }
         newState[e.target.id] = e.target.value
         this.setState(newState)
+        console.log(this.state)
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
         const payload = { ...this.state }
-        delete payload.open
         console.log("THE BUSINESS", payload)
-        // add this.props.addCar function here
         this.props.addListing(payload)
-        // also add this.setState to close the dialog
-        this.setState({ open: false })
-        console.log(this.props.value)
+        console.log(this.props)
     }
 
     componentDidUpdate = (prevProps, prevState) => {
@@ -55,24 +50,28 @@ class addListing extends React.Component {
                                 style={{ display: 'flex', flexDirection: 'column', width: '350px' }}>
                                 <TextField 
                                     id="name" 
+                                    name="name"
                                     placeholder="Name" 
                                     value={this.state.name} 
                                     onChange={this.handleTextChange} 
                                     required />
                                 <TextField 
                                     id="description" 
+                                    name="description"
                                     placeholder="Description" 
                                     value={this.state.description} 
                                     onChange={this.handleTextChange} 
                                     required />
                                 <TextField 
                                     id="address" 
+                                    name="address"
                                     placeholder="Address" 
                                     value={this.state.address} 
                                     onChange={this.handleTextChange} 
                                     required />
                                 <TextField 
                                     id="hours" 
+                                    name="hours"
                                     placeholder="Hours" 
                                     value={this.state.hours} 
                                     onChange={this.handleTextChange} 
